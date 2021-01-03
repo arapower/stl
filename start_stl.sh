@@ -6,6 +6,9 @@ set -u
 	# root directory of stl
 	STL_ROOT_DIR="$(d=${0%/*}/; [ "_$d" = "_$0/" ] && d='./'; cd "$d"; pwd)"
 	export STL_ROOT_DIR
+	# root directory of the project
+	PRJ_ROOT_DIR="$(d=${0%/*}/; [ "_$d" = "_$0/" ] && d='./'; cd "$d.."; pwd)"
+	export PRJ_ROOT_DIR
 	# directory for functions of stl
 	STL_FUNCTION_DIR="$STL_ROOT_DIR/func"
 	export STL_FUNCTION_DIR
