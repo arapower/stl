@@ -424,7 +424,7 @@ assert_error_not_equal_file () {
 
 print_OK () {
 	(
-	echo "[OK] $test_case (${current_test_code_file}:${current_line})"
+	echo "[OK] $current_test_code_file (${test_case}:${current_line})"
 	)
 }
 
@@ -435,14 +435,14 @@ print_NG () {
 		expected="$1"
 		actual="$2"
 		cat <<-EOF
-			[NG] $test_case (${current_test_code_file}:${current_line})
+			[NG] $current_test_code_file (${test_case}:${current_line})
 			 [EXPECTED]
 			${expected}
 			 [ACTUAL]
 			${actual}
 		EOF
 	else
-		echo "[NG] $test_case (${current_test_code_file}:${current_line})"
+		echo "[NG] $current_test_code_file (${test_case}:${current_line})"
 	fi
 	)
 }
