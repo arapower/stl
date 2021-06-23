@@ -29,6 +29,6 @@
 	# extract only function name
 	sed 's/.*\(stl_[^(]*\) *(.*/\1/' |
 	# add setup and teardown functions before and after each
-	sed 's/.*/setup\n&\nteardown/' > "$test_code_functions"
+	sed 's/.*/setup'"$LF"'&'"$LF"'teardown/' > "$test_code_functions"
 	. "$test_code_functions"
 }
