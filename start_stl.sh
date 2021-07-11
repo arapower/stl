@@ -40,7 +40,8 @@ set -u
 	export PATH
 
 	# sed置換用にLFを定義
-	LF=$'\\\x0A'
+	LF=$(printf '\\\n_')
+	LF=${LF%_}
 	export LF
 }
 
