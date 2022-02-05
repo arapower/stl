@@ -8,7 +8,7 @@ log_date () {
 	: 'define' && {
 		# log file path
 		if [ -z "$1" ]; then
-			log_file="$STL_ROOT_DIR/stl.log"
+			log_file="$STL_ROOT_DIR/log"
 		else
 			log_file="$1"
 		fi
