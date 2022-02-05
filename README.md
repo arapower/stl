@@ -31,6 +31,14 @@
 
 - stl … Shell Testing Libraryの略
 
+## インストール方法
+
+stl用ディレクトリを作成したいディレクトリで以下のコマンドを実行する
+
+```sh
+$ curl https://raw.githubusercontent.com/arapower/stl/main/mod/setup_stl.sh | sh
+```
+
 ## 基本的な使い方
 
 1. テストコードを`code`ディレクトリに保存する
