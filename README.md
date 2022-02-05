@@ -3,6 +3,7 @@
 <!-- TOC -->
 
 - [stlについて](#stlについて)
+- [インストール方法](#インストール方法)
 - [基本的な使い方](#基本的な使い方)
 - [ディレクトリ構成](#ディレクトリ構成)
 - [テストコードの書き方](#テストコードの書き方)
@@ -30,6 +31,14 @@
 ## stlについて
 
 - stl … Shell Testing Libraryの略
+
+## インストール方法
+
+stl用ディレクトリを作成したいディレクトリで以下のコマンドを実行する
+
+```sh
+$ curl https://raw.githubusercontent.com/arapower/stl/main/mod/setup_stl.sh | sh
+```
 
 ## 基本的な使い方
 
