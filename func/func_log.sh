@@ -3,7 +3,7 @@
 # Use: Output date time to log file
 # Arg1: (optional) Path of log file
 # If Arg1 is not exist, log file path is STL_ROOT_DIR.
-output_log () {
+log_date () {
 	(
 	: 'define' && {
 		# log file path
@@ -19,7 +19,7 @@ output_log () {
 		)
 	}
 	: 'execute' && {
-		printf "[LOG] ${datetime}\t${PRJ_ROOT_DIR}\n" >> "$log_file"
+		printf "[LOG] ${datetime}\t${STL_ROOT_DIR}\n" >> "$log_file"
 	}
 	)
 }
