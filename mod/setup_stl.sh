@@ -23,7 +23,7 @@ set -ue
 : 'Change directory for clone stl repository' && {
 	setup_directory='/tmp/stl_setup'
 	[ -d "${setup_directory}" ] && rm -rf "${setup_directory}" 
-	[ $? -ne 0 ] && echo "[ERROR] Cannot remove ${setup_directory} directory due to permissions." >&2 && exit 1
+	[ -d "${setup_directory}" ] && echo "[ERROR] Cannot remove ${setup_directory} directory due to permissions." >&2 && exit 1
 	mkdir "${setup_directory}"
 	[ $? -ne 0 ] && echo "[ERROR] Cannot make ${setup_directory} directory." >&2 && exit 1
 	cd "${setup_directory}"
@@ -31,7 +31,7 @@ set -ue
 }
 
 : 'Clone target repository from GitHub' && {
-	repository_from='git@github.com:arapower/stl.git'
+	repository_from='https://github.com/arapower/stl.git'
 	repository_name="${repository_from##*/}"
 	directory_to="${setup_directory}/${repository_name%.git}"
 
