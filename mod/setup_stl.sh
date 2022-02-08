@@ -32,10 +32,11 @@ set -ue
 
 : 'Clone target repository from GitHub' && {
 	repository_from='https://github.com/arapower/stl.git'
-	repository_name="${repository_from##*/}"
-	directory_to="${setup_directory}/${repository_name%.git}"
+	repository_name=$(echo "${repository_from}" | sed 's;.*/\([^/]*\)\.git;\1;')
+	directory_to="${setup_directory}/${repository_name}"
 
 	git clone "${repository_from}"
 	[ ! -d "${directory_to}" ] && echo "[ERROR] Cannot clone stl repository to ${directory_to} directory by git command." >&2 && exit 1
 	cp -r "${directory_to}" "${target_directory}/"
+	rm -rf "${target_directory}/${repository_name}/.git"
 }
