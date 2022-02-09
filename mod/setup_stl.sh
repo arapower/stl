@@ -39,4 +39,9 @@ set -ue
 	[ ! -d "${directory_to}" ] && echo "[ERROR] Cannot clone stl repository to ${directory_to} directory by git command." >&2 && exit 1
 	cp -r "${directory_to}" "${target_directory}/"
 	rm -rf "${target_directory}/${repository_name}/.git"
+	: 'Remove sample test codes' && {
+		sample_1="${target_directory}/stl/code/output_log.sh"
+		sample_2="${target_directory}/stl/code/sample_code.sh"
+		rm "$sample_1" "$sample_2"
+	}
 }
