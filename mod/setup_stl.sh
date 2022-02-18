@@ -33,15 +33,17 @@ set -ue
 : 'Clone target repository from GitHub' && {
 	repository_from='https://github.com/arapower/stl.git'
 	repository_name=$(echo "${repository_from}" | sed 's;.*/\([^/]*\)\.git;\1;')
-	directory_to="${setup_directory}/${repository_name}"
+	cloned_directory="${setup_directory}/${repository_name}"
 
 	git clone "${repository_from}"
-	[ ! -d "${directory_to}" ] && echo "[ERROR] Cannot clone stl repository to ${directory_to} directory by git command." >&2 && exit 1
-	cp -r "${directory_to}" "${target_directory}/"
-	rm -rf "${target_directory}/${repository_name}/.git"
-	: 'Remove sample test codes' && {
-		sample_1="${target_directory}/stl/code/output_log.sh"
-		sample_2="${target_directory}/stl/code/sample_code.sh"
+	[ ! -d "${cloned_directory}" ] && echo "[ERROR] Cannot clone stl repository to ${cloned_directory} directory by git command." >&2 && exit 1
+
+	: 'Remove unnecessary files' && {
+		rm -rf "${cloned_directory}/.git"
+		sample_1="${cloned_directory}/code/output_log.sh"
+		sample_2="${cloned_directory}/code/sample_code.sh"
 		rm "$sample_1" "$sample_2"
 	}
+
+	cp -r "${cloned_directory}" "${target_directory}/"
 }
