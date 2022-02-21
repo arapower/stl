@@ -424,25 +424,27 @@ assert_error_not_equal_file () {
 
 print_OK () {
 	(
-	echo "[OK] $test_case (${current_test_code_file}:${current_line})"
+	ESC=$(printf '\033')
+	printf "${ESC}[32m%s${ESC}[m\n" "[OK] $test_case (${current_test_code_file}:${current_line})"
 	)
 }
 
 print_NG () {
 	(
+	ESC=$(printf '\033')
 	# Change the output according to the number of arguments
 	if [ $# = 2 ]; then
 		expected="$1"
 		actual="$2"
 		cat <<-EOF
-			[NG] $test_case (${current_test_code_file}:${current_line})
+			${ESC}[31m[NG] $test_case (${current_test_code_file}:${current_line})
 			 [EXPECTED]
 			${expected}
 			 [ACTUAL]
-			${actual}
+			${actual}${ESC}[m
 		EOF
 	else
-		echo "[NG] $test_case (${current_test_code_file}:${current_line})"
+		printf "${ESC}[31m%s${ESC}[m\n" "[NG] $test_case (${current_test_code_file}:${current_line})"
 	fi |
 	tee -a "$NG_logs"
 	)
@@ -451,7 +453,8 @@ print_NG () {
 error_and_exit () {
 	print_NG
 	# print error message and exit
-	printf "[ERROR] %s\n" "$@" |
+	ESC=$(printf '\033')
+	printf "${ESC}[31m%s${ESC}[m\n" "[ERROR] $@" |
 	tee -a "$NG_logs"
 	exit 1
 }
