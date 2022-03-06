@@ -2,7 +2,6 @@
 
 : 'load args' && {
 	test_code="$1"
-	test_code_name="${1##*/}"
 }
 
 : 'load functions of stl' && {
