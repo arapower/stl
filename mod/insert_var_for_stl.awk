@@ -2,7 +2,7 @@
 
 {
 	# variable for line number
-	print "current_line=" NR;
+	#__Conditional_output_current_line__
 	print $0;
 	if($0 ~/^[ 	]*stl_[^(][^(]* *\(.*/) {
 		# variable for test code file name

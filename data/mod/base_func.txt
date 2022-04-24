@@ -1,0 +1,10 @@
+# This is comments.
+
+assert_both_equal () {
+	(
+	: 'define' && {
+		# Execution command string to be tested
+		target_command="$1"
+	}
+	)
+}

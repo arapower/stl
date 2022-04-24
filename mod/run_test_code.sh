@@ -5,11 +5,11 @@
 }
 
 : 'load functions of stl' && {
-	test_functions=$(mktemp)
+	test_functions_file=$(mktemp)
 	find "$STL_FUNCTION_DIR" -type f |
 	sed 's/^/. "/' |
-	sed 's/$/"/' > "$test_functions"
-	. "$test_functions"
+	sed 's/$/"/' > "$test_functions_file"
+	. "$test_functions_file"
 }
 
 : 'insert variables for stl in test code' && {
@@ -26,7 +26,7 @@
 	cat "$inserted_test_code" |
 	grep "^[ 	]*stl_" |
 	# extract only function name
-	sed 's/.*\(stl_[^(]*\) *(.*/\1/' |
+	sed 's/[ 	]*\(stl_[^(]*\) *(.*/\1/' |
 	# add setup and teardown functions before and after each
 	sed 's/.*/setup'"$LF"'&'"$LF"'teardown/' > "$test_code_functions"
 	. "$test_code_functions"
