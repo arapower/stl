@@ -1,0 +1,14 @@
+setup (){
+	target="/tmp/sample_code.sh"
+}
+
+teardown (){
+	:
+}
+
+stl_sample_code() {
+	(
+	assert_both_equal "echo abc" "abc"
+	)
+}
+

@@ -1,0 +1,17 @@
+# This is comments.
+
+assert_both_equal () {
+	(
+	: 'define' && {
+		# Execution command string to be tested
+		target_command="$1"
+	}
+	)
+}
+
+# This is comments.
+stl_func() {
+	(
+			echo 'This is Function'
+	)
+}

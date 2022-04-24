@@ -1,0 +1,2 @@
+/#__Conditional_output_current_line__/a	if($0 ~ /^[({]*[ 	]*assert_both_equal[ 	]/){print "current_line=" NR;}
+/#__Conditional_output_current_line__/a	if($0 ~ /^[({]*[ 	]*stl_func[ 	]/){print "current_line=" NR;}

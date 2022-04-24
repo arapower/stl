@@ -1,0 +1,16 @@
+setup (){
+	target="/tmp/sample_code.sh"
+}
+
+teardown (){
+	:
+}
+
+stl_sample_code() {
+current_test_code_file=/home/user01/git/stl/data/mod/insert_var_for_stl_test_code_input.txt
+test_case=stl_sample_code
+	(
+current_line=11
+	assert_both_equal "echo abc" "abc"
+	)
+}
