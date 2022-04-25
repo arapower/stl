@@ -40,9 +40,9 @@ set -ue
 
 	: 'Remove unnecessary files' && {
 		rm -rf "${cloned_directory}/.git"
-		sample_1="${cloned_directory}/code/output_log.sh"
-		sample_2="${cloned_directory}/code/sample_code.sh"
-		rm "$sample_1" "$sample_2"
+		code_dir="${cloned_directory}/code"
+		data_dir="${cloned_directory}/data"
+		rm -rf "$code_dir"/* "$data_dir"/*
 	}
 
 	cp -r "${cloned_directory}" "${target_directory}/"
