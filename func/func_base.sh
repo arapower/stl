@@ -437,7 +437,7 @@ print_NG () {
 		expected="$1"
 		actual="$2"
 		cat <<-EOF
-			${ESC}[31m[NG] ${current_test_code_file}:${current_line} ${test_case}"
+			${ESC}[31m[NG] ${current_test_code_file}:${current_line} ${test_case}
 			 [EXPECTED]
 			${expected}
 			 [ACTUAL]
