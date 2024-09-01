@@ -45,9 +45,39 @@ set -u
 	export LF
 }
 
+: 'Get arguments' && {
+	test_files=$(mktemp)
+	while [ $# -gt 0 ]; do
+		case "$1" in
+			-f|--file)
+				if [ -r "$2" ]; then
+					echo "$2" >> "$test_files"
+				else
+					echo "Error: Test file $2 does not exist or is not readable." >&2
+					exit 1
+				fi
+				shift 2
+				;;
+			-h|--help)
+				echo "Usage: $0 [-f|--file <test-file-name>] [-h|--help]" >&2
+				exit 0
+				;;
+			*)
+				echo "Unknown option: $1"
+				exit 1
+				;;
+		esac
+	done
+}
+
 : 'run test codes' && {
-	find "$STL_TEST_CODE_DIR" -type f -name '*.sh' |
-	xargs "$xargs_opt_i" @ run_test_code.sh "@"
+	if [ -s "$test_files" ]; then
+		cat "${test_files}" |
+		xargs "$xargs_opt_i" @ run_test_code.sh "@"
+	else
+		find "$STL_TEST_CODE_DIR" -type f -name '*.sh' |
+		xargs "$xargs_opt_i" @ run_test_code.sh "@"
+	fi
 }
 
 : 'exit' && {
