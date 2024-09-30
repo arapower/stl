@@ -1,6 +1,8 @@
 # stl
 
 - Repository: [https://github.com/arapower/stl](https://github.com/arapower/stl)
+- [README](README.md)
+- [README: Japanese](README_ja.md)
 
 stl (Shell Testing Library) is a testing library designed to simplify writing tests for shell scripts.
 It aims to use POSIX shell-compatible syntax as much as possible to ensure wide compatibility across various environments.
@@ -89,3 +91,4 @@ $ ./stl/start_stl.sh
 - [Reference: Assertion Functions](doc/reference_assertion_functions.md): Detailed explanation of assertion functions
 - [Design and Implementation of stl (Shell Testing Library)](doc/design.md): Overview of stl's design philosophy, structure, and implementation features
 - [Advanced Practical Guide](doc/advanced_practical_guide.md): Advanced usage and practical techniques
+- [Glossary](doc/glossary.md): Definitions of key terms used in stl

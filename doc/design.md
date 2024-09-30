@@ -68,3 +68,4 @@ It also welcomes continuous improvement and feedback from the community, with th
 - [User Manual](user_manual.md). Basic usage including naming conventions for test case functions
 - [Reference: Assertion Functions](reference_assertion_functions.md). Detailed explanation of assertion functions
 - [Advanced Practical Guide](advanced_practical_guide.md). Advanced usage and practical techniques
+- [Glossary](glossary.md): Definitions of key terms used in stl

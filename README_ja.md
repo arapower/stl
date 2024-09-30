@@ -1,6 +1,8 @@
 # stl
 
 - リポジトリ: [https://github.com/arapower/stl](https://github.com/arapower/stl)
+- [README.md](README.md)
+- [README.md: Japanese](README_ja.md)
 
 stl（Shell Testing Library）はシェルスクリプトのテストを簡単に書けるようにするテスティングライブラリです。
 可能な限りPOSIXシェル互換の構文を使用し、幅広い環境での動作を目指します。
@@ -89,3 +91,4 @@ $ ./stl/start_stl.sh
 - [リファレンス: アサーション関数](doc/reference_assertion_functions.md): アサーション関数の詳細説明
 - [stl (Shell Testing Library) の設計と実装](doc/design.md): stlの設計思想、構造、実装の特徴の概要
 - [応用的な実践ガイド](doc/advanced_practical_guide.md): 高度な使用方法と実践的なテクニック
+- [用語集](doc/glossary.md): stlで使用される主要な用語の定義
