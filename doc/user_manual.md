@@ -196,3 +196,4 @@ By using these environment variables, you can use relative paths in your test co
 - [Reference: Assertion Functions](reference_assertion_functions.md). Detailed explanation of assertion functions
 - [Design and Implementation of stl (Shell Testing Library)](design.md): Overview of stl's design philosophy, structure, and implementation features
 - [Advanced Practical Guide](advanced_practical_guide.md). Advanced usage and practical techniques
+- [Glossary](glossary.md): Definitions of key terms used in stl

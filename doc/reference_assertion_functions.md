@@ -210,3 +210,4 @@ assert_error_not_equal_file "command_that_fails" "${unexpected_error}"
 ## Related Documents
 
 - [User Manual](user_manual.md). Basic usage including naming conventions for test case functions
+- [Glossary](glossary.md): Definitions of key terms used in stl

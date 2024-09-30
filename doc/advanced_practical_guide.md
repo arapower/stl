@@ -168,3 +168,4 @@ test_custom_script() {
 - [User Manual](user_manual.md). Basic usage including naming conventions for test case functions
 - [Design and Implementation of stl (Shell Testing Library)](design.md): Overview of stl's design philosophy, structure, and implementation features
 - [Reference: Assertion Functions](reference_assertion_functions.md). Detailed explanation of assertion functions
+- [Glossary](glossary.md): Definitions of key terms used in stl
