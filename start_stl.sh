@@ -52,6 +52,8 @@ set -u
 			-f|--file)
 				if [ -r "$2" ]; then
 					echo "$2" >> "$test_files"
+					TEST_FILE_SELECTION='true'
+					export TEST_FILE_SELECTION
 				else
 					echo "Error: Test file $2 does not exist or is not readable." >&2
 					exit 1
