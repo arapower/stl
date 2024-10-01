@@ -188,6 +188,7 @@ The main environment variables available in test code are as follows.
 - `STL_TEST_CODE_DIR`: Absolute path of the `stl/code` directory where test code is stored
 - `STL_TEST_DATA_DIR`: Absolute path of the `stl/data` directory where test data is stored
 - `STL_MODULE_DIR`: Absolute path of the `stl/mod` directory where stl modules are stored
+- `TEST_FILE_SELECTION`: Indicates whether a specific test file has been selected using the `-f` option. When set to "true", it means a particular test file was specified for execution
 
 By using these environment variables, you can use relative paths in your test code that do not depend on the project structure.
 
